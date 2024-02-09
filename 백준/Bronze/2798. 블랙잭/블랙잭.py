@@ -1,10 +1,13 @@
 N, M = map(int, input().split())
 lst = list(map(int, input().split()))
-arr = []
-for i in lst:
-    for j in lst:
-        for k in lst:
-            if i != j and i != k and j != k and i + k + j <= M:
-                arr.append((i+k+j))
+result = 0
 
-print(max(arr))
+for i in range(N-2):
+    for j in range(i+1, N-1):
+        for k in range(j+1, N):
+            number = lst[i]+lst[j]+lst[k]
+            if number <= M:
+                if result < number:
+                    result = number
+
+print(result)
