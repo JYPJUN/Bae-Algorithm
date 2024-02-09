@@ -1,17 +1,13 @@
 N = int(input())
-result = 0
+N_length = N - 9 * len(str(N))
 
-for i in range(1, N):
-    arr = []
-    a = i
-    while True:
-        if a == 0:
-            break
-        arr.append(a%10)
-        a //= 10
+if N_length < 0:
+    N_length = 0
 
-    if N == i + sum(arr):
-        result = i
+for i in range(N_length, N):
+    total = i + sum(map(int, str(i)))
+    if total == N:
+        print(i)
         break
-
-print(result)
+else:
+    print(0)
