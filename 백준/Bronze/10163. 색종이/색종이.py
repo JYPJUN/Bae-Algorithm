@@ -1,16 +1,20 @@
-import sys
+n = int(input())
+paper = []
 
-N = int(sys.stdin.readline())
-arr = [[0]*1001 for _ in range(1001)]
+for i in range(n):
+    paper.append(list(map(int, input().split())))
 
-for i in range(1, N+1):
-    a, b, x, y = map(int, sys.stdin.readline().split())
-    for p in range(b, b+y):
-        for q in range(a, a+x):
-            arr[p][q] = i
+place = [[0] * 1001 for _ in range(1001)]
 
-for j in range(1, N+1):
-    num = 0
-    for n in arr:
-        num += n.count(j)
-    print(num)
+for i, p in enumerate(paper):
+    cnt = 0
+    [row, col, area, height] = p
+
+    for r in range(row, row + area):
+        place[r][col:col + height] = [i + 1] * height
+
+for i in range(n):
+    cnt = 0
+    for p in place:
+        cnt += p.count(i + 1)
+    print(cnt)
