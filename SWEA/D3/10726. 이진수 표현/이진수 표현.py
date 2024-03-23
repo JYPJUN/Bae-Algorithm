@@ -3,10 +3,7 @@ T = int(input())
 for tc in range(1, T+1):
     N, M = map(int, input().split())
 
-    for i in range(N):
-        if M & 0x1 == 0:
-            print(f'#{tc}', 'OFF')
-            break
-        M = M >> 1
-    else:
+    if M % 2**(N) == 2**(N)-1:
         print(f'#{tc}', 'ON')
+    else:
+        print(f'#{tc}', 'OFF')
