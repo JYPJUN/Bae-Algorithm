@@ -11,8 +11,7 @@ def inspection(a):
     # 9칸 검사
     a1, b1 = a[0]//3, a[1]//3
     for p in range(3):
-        for q in range(3):
-            k -= {arr[a1*3+p][b1*3+q]}
+        k -= set(arr[a1*3+p][b1*3:b1*3+3])
     return k
 
 def find_complete_sudoku(s):
