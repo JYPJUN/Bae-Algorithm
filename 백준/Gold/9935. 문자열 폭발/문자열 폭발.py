@@ -1,15 +1,17 @@
 import sys
 
-N = sys.stdin.readline().rstrip()
-bomb = sys.stdin.readline().rstrip()
-K = len(bomb)
+str1 = sys.stdin.readline().rstrip()
+k = sys.stdin.readline().rstrip()
+
 stack = []
 
-for i in N:
+for i in str1:
     stack.append(i)
-    if bomb == ''.join(stack[-K:]):
-        for k in range(K):
-            stack.pop()
+    if i == k[-1]:
+        if len(stack) >= len(k) and ''.join(stack[-len(k):]) == k:
+            for j in range(len(k)):
+                stack.pop()
+
 if stack:
     print(''.join(stack))
 else:
