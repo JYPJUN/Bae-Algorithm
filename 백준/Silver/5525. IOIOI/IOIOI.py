@@ -2,15 +2,17 @@ N = int(input())
 M = int(input())
 S = input()
 
-word = 'IO' * N + 'I'
+answer, i, count = 0, 0, 0
 
-K = 0
-cnt = 0
-while K <= len(S):
-    if S[K:K+2*N+1] == word:
-        cnt += 1
-        K += 2
+while i < (M - 1):
+    if S[i:i+3] == 'IOI':
+        i += 2
+        count += 1
+        if count == N:
+            answer += 1
+            count -= 1
     else:
-        K += 1
+        i += 1
+        count = 0
 
-print(cnt)
+print(answer)
