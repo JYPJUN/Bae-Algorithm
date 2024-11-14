@@ -1,20 +1,24 @@
 #include <iostream>
-#include <vector>
-
 using namespace std;
 
-int main() {
-	int N, X, count = 0;
-	cin >> N >> X;
-	vector<int> A(N);
+#define FASTIO ios_base::sync_with_stdio(false);cin.tie(NULL);
+#define SETPRECISION(n) cout << fixed;cout.precision(n);
+#define SIZE(v) (int)v.size()
+#define ALL(v) v.begin(),v.end()
+using ll = long long;
 
-	for (int i = 0; i < N; i++) {
-		cin >> A[i];
-	}
-	
-	for (int i = 0; i < N; i++) {
-		if (A[i] < X) {
-			cout << A[i] << " ";
+int main() {
+	FASTIO;
+
+	int n, x;
+	cin >> n >> x;
+
+	for (int i = 0; i < n; i++) {
+		int num;
+		cin >> num;
+
+		if (num < x) {
+			cout << num << ' ';
 		}
 	}
 
