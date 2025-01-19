@@ -2,14 +2,9 @@ import sys
 input = sys.stdin.readline
 
 N = int(input())
-arr = []
+arr = sorted(int(input()) for _ in range(N))
 max_weight = 0
 
-for _ in range(N):
-    arr.append(int(input()))
-arr.sort()
-
-for i in range(N):
-    max_weight = max(arr[i] * (N-i), max_weight)
+max_weight = max(arr[i] * (N - i) for i in range(N))
 
 print(max_weight)
