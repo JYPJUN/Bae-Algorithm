@@ -1,20 +1,20 @@
 #include <iostream>
-#include <string>
-
 using namespace std;
 
 int main() {
-	int a;
-	string b;
+  ios::sync_with_stdio(false);
+  cin.tie(NULL);
+  int a, b;
+  cin >> a >> b;
 
-	cin >> a;
-	cin >> b;
+  int b1 = b % 10;
+  int b2 = (b / 10) % 10;
+  int b3 = b / 100;
 
-	for (int i = 2; i > -1; i--) {
-		cout << a * (b[i] - '0') << endl;
-	}
-	cout << a * stoi(b) << endl;
-	
+  cout << a * b1 << endl;
+  cout << a * b2 << endl;
+  cout << a * b3 << endl;
+  cout << a * b << endl;
 
-	return 0;
+  return 0;
 }
