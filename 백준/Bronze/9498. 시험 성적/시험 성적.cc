@@ -1,26 +1,13 @@
 #include <iostream>
-
 using namespace std;
 
 int main() {
-	int a;
-	cin >> a;
+  ios::sync_with_stdio(false);
+  cin.tie(NULL);
+  int score;
+  cin >> score;
 
-	if (a >= 90) {
-		cout << 'A' << endl;
-	}
-	else if (a >= 80) {
-		cout << 'B' << endl;
-	}
-	else if (a >= 70) {
-		cout << 'C' << endl;
-	}
-	else if (a >= 60) {
-		cout << 'D' << endl;
-	}
-	else {
-		cout << 'F' << endl;
-	}
+  cout << (score >= 90 ? "A" : (score >=80 ? "B" : (score >= 70 ? "C" : (score >= 60 ? "D" : "F"))));
 
-	return 0;
+  return 0;
 }
