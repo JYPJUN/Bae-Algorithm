@@ -1,32 +1,28 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
 using namespace std;
 
-#define FASTIO ios_base::sync_with_stdio(false);cin.tie(NULL);
-#define SETPRECISION(n) cout << fixed;cout.precision(n);
-#define SIZE(v) (int)v.size()
-#define ALL(v) v.begin(),v.end()
-
 int main() {
-	FASTIO;
+  ios::sync_with_stdio(false);
+  cin.tie(NULL);
 
-	int N, M, i, j, k;
-	cin >> N >> M;
+  int N, M;
+  cin >> N >> M;
 
-	vector<int> arr(N, 0);
-	for (int a = 0; a < M; a++) {
-		cin >> i >> j >> k;
-		for (int b = i - 1; b < j; b++) {
-			arr[b] = k;
-		}
-	}
-	
-	for (int i = 0; i < N; i++) {
-		cout << arr[i];
-		if (i != N - 1) cout << " ";
-	}
-	cout << '\n';
+  vector<int> arr(N, 0);
 
-	return 0;
+  for (int m = 0; m < M; m++) {
+    int i, j, k;
+    cin >> i >> j >> k;
+
+    for (int n = i-1; n < j; n++) {
+      arr[n] = k;
+    }
+  }
+
+  for (int p = 0; p < N; p++) {
+    cout << arr[p] << ' ';
+  }
+
+  return 0;
 }
