@@ -1,29 +1,21 @@
 #include <iostream>
 using namespace std;
 
-#define FASTIO ios_base::sync_with_stdio(false);cin.tie(NULL);
-#define SETPRECISION(n) cout << fixed;cout.precision(n);
-#define SIZE(v) (int)v.size()
-#define ALL(v) v.begin(),v.end()
-
 int main() {
-	FASTIO;
+  ios::sync_with_stdio(false);
+  cin.tie(NULL);
 
-	int n, num =0;
-	int max_num = -1000000;
-	int	min_num = 1000000;
-	cin >> n;
+  int N, min_v = 1000000, max_v = -1000000;
+  cin >> N;
 
-	for (int i = 0; i < n; i++) {
-		cin >> num;
-		if (num < min_num) {
-			min_num = num;
-		}
-		if (num > max_num) {
-			max_num = num;
-		}
-	}
-	cout << min_num << " " << max_num << '\n';
+  for (int i = 0; i < N; i++) {
+    int num;
+    cin >> num;
+    if (num < min_v) min_v = num;
+    if (num > max_v) max_v = num;
+  }
 
-	return 0;
+  cout << min_v << ' ' << max_v << '\n';
+
+  return 0;
 }
