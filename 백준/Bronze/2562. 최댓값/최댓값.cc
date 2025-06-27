@@ -1,30 +1,24 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
 using namespace std;
 
-#define FASTIO ios_base::sync_with_stdio(false);cin.tie(NULL);
-#define SETPRECISION(n) cout << fixed;cout.precision(n);
-#define SIZE(v) (int)v.size()
-#define ALL(v) v.begin(),v.end()
-
 int main() {
-	FASTIO;
+  ios::sync_with_stdio(false);
+  cin.tie(NULL);
 
-	int n = 9;
-	int num = 0, new_num = 0;
-	int m = 1;
+  int max_val = 0, rank = 1;
+  cin >> max_val;
 
-	for (int i = 0; i < n; i++) {
-		cin >> new_num;
-		if (new_num > num) {
-			num = new_num;
-			m = i+1;
-		}
-	}
+  for (int i = 2; i < 10; i++) {
+    int num;
+    cin >> num;
+    if (num > max_val) {
+      max_val = num;
+      rank = i;
+    }
+  }
 
-	cout << num << '\n';
-	cout << m << '\n';
+  cout << max_val << '\n';
+  cout << rank << '\n';
 
-	return 0;
+  return 0;
 }
