@@ -26,7 +26,7 @@ int main() {
   a_num = reverse_str(a_num);
   b_num = reverse_str(b_num);
 
-  if (a_num > b_num) cout << a_num << '\n'; else cout << b_num << '\n';
+  cout << (a_num > b_num ? a_num : b_num) << '\n';
 
   return 0;
 }
