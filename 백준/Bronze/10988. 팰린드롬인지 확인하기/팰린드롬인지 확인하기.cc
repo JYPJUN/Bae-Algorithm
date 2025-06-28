@@ -9,7 +9,7 @@ int main() {
   cin >> word;
   int i=0, j = word.size()-1;
   bool flag = true;
-  while (i != j && i < j) {
+  while (i < j) {
     if (word[i] != word[j]) {
       flag = false;
       break;
