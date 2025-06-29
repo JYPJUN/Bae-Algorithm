@@ -5,28 +5,23 @@ int main() {
   ios::sync_with_stdio(false);
   cin.tie(NULL);
 
-  int N, total_cnt = 0;
-  cin >> N;
-  bool arr[101][101] = {false};
+  bool arr[100][100] = {0};
+  int sum = 0;
+  int n; cin >> n;
 
-  for (int i = 0; i < N; i++) {
-    int left, bottom;
-    cin >> left >> bottom;
-
-    for (int p = left; p < left+10; p++) {
-      for (int q = bottom; q < bottom+10; q++) {
-        arr[p][q] = true;
+  while (n--) {
+    int x, y;
+    cin >> x >> y;
+    for (int i = y; i < y+10; i++) {
+      for (int j= x; j < x+10; j++) {
+        if (arr[i][j]) continue;
+        arr[i][j] = 1;
+        sum ++;
       }
     }
   }
 
-  for (int n = 0; n < 100; n++) {
-    for (int m = 0; m < 100; m++) {
-      total_cnt += arr[n][m];
-    }
-  }
-
-  cout << total_cnt << '\n';
+  cout << sum;
 
   return 0;
 }
