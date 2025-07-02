@@ -7,19 +7,17 @@ int main() {
 
   int T;
   cin >> T;
+  int coin[4] = {25, 10, 5, 1};
 
   for (int i = 0; i < T; i++) {
-    int C, a = 0, b = 0, c = 0, d = 0;
+    int C;
     cin >> C;
 
-    a = C / 25;
-    C %= 25;
-    b = C / 10;
-    C %= 10;
-    c = C / 5;
-    d = C % 5;
-
-    cout << a << ' ' << b << ' ' << c << ' ' << d << '\n';
+    for (int i = 0; i < 4; i++) {
+      cout << C / coin[i] << ' ';
+      C %= coin[i];
+    }
+    cout << '\n';
   }
 
   return 0;
